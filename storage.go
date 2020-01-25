@@ -9,7 +9,7 @@ func connect() *sql.DB {
 	db, err := sql.Open("mysql", "root@tcp(localhost:3306)/latihan")
 
 	if err != nil {
-		log.Fatal(err) // fatal eror warna merah
+		log.Fatal(err) 
 	}
 
 	return db
