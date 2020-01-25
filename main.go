@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	router := mux.NewRouter() // menginiliasisasi data secara otomatis ditentukan tipe data nama variabel := value nya
+	router := mux.NewRouter() 
 	router.HandleFunc("/users", getStudents).Methods("GET") //
 	router.HandleFunc("/users/add",addSudents).Methods("POST")
 	router.HandleFunc("/users/update", updateUser).Methods("POST")
