@@ -12,7 +12,7 @@ func getStudents(w http.ResponseWriter, r *http.Request) {
 
 	db := connect()
 	defer db.Close()
-	// row satu table kebawah
+	
 	rows, err := db.Query("Select id,first_name,last_name from student")
 	if err != nil {
 		log.Print(err)
@@ -29,7 +29,7 @@ func getStudents(w http.ResponseWriter, r *http.Request) {
 
 	response.Status = 1
 	response.Message = "Success"
-	response.Data = arr_student // dimasukin reponse.data
+	response.Data = arr_student 
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(response)
@@ -73,7 +73,7 @@ func updateUser(w http.ResponseWriter, r *http.Request) {
 	var response Response
 
 	db := connect() //
-	defer db.Close() //defer menunda
+	defer db.Close() 
 
 	err := r.ParseMultipartForm(4096)
 	if err != nil {
